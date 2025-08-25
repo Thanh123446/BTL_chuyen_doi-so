@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển Âm Thanh Thành Văn Bản</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Chuyển Âm Thanh Thành Văn Bản</h1>
+        
+        <!-- Phần tải lên tệp âm thanh -->
+        <section>
+            <h2>Tải lên tệp âm thanh (MP4, WAV, v.v.)</h2>
+            <form id="upload-form" enctype="multipart/form-data">
+                <input type="file" id="file-input" name="file" accept="audio/*,.m4a,.mp4">
+                <button type="submit">Chuyển đổi</button>
+            </form>
+        </section>
+        
+        <!-- Phần ghi âm từ micro -->
+        <section>
+            <h2>Ghi âm từ micro</h2>
+            <button id="record-btn">Bắt đầu ghi âm</button>
+            <button id="stop-btn" disabled>Dừng ghi âm</button>
+            <p id="status">Trạng thái: Sẵn sàng</p>
+        </section>
+        
+        <!-- Kết quả -->
+        <section>
+            <h2>Kết quả văn bản</h2>
+            <textarea id="result" readonly placeholder="Văn bản được chuyển đổi sẽ hiển thị ở đây..."></textarea>
+        </section>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
